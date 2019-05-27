@@ -1,8 +1,8 @@
+# IntelliJ
 .idea/
-
 Tierverleih.iml
-/
 bin/
 
+# Eclipse
 .classpath
 .project
