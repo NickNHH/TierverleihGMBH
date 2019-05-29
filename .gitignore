@@ -2,6 +2,7 @@
 .idea/
 Tierverleih.iml
 bin/
+out/
 
 # Eclipse
 .classpath

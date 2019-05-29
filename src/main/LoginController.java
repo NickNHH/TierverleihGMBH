@@ -6,4 +6,6 @@ import javafx.scene.control.TextField;
 public class LoginController {
     public Button backBtn;
     public TextField passwordTf;
+
+    public void init() { }
 }
