@@ -27,4 +27,9 @@ public class MainController {
         stage = (Stage) loginBtn.getScene().getWindow();
         stage.close();
     }
+
+    //Opens the animal overview page and closes title screen
+    public void animals() {
+
+    }
 }
