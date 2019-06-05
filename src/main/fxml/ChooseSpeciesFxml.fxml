@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ChooseSpeciesController">
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="412.0" layoutY="159.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="77.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+    <Label layoutX="334.0" layoutY="21.0" text="Tierauswahl" textFill="WHITE">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+    <Button fx:id="backBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Zurück">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Button>
+   <Button fx:id="cartBtn" layoutX="633.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Warenkorb">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Button>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutY="95.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+   <Label layoutX="193.0" layoutY="104.0" text="Wähle eine Tierart aus, welche du mieten möchtest." textFill="WHITE">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="38.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="giraffeView" fitHeight="190.0" fitWidth="190.0" layoutX="39.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadGiraffes" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="38.0" layoutY="372.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="lorisView" fitHeight="190.0" fitWidth="190.0" layoutX="39.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadLoris" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="301.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="rabbitView" fitHeight="190.0" fitWidth="190.0" layoutX="302.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadRabbits" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="301.0" layoutY="372.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="guentherdikdikView" fitHeight="190.0" fitWidth="190.0" layoutX="302.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadGuenthers" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="563.0" layoutY="167.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="batView" fitHeight="190.0" fitWidth="190.0" layoutX="564.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadBats" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="563.0" layoutY="372.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+   <ImageView fx:id="foxView" fitHeight="190.0" fitWidth="190.0" layoutX="564.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#loadFoxes" onMouseEntered="#handMouse" onMouseExited="#normalMouse"/>
+</Pane>
