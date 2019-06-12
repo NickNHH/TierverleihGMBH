@@ -7,4 +7,9 @@ public class CartController {
     public Pane pane;
     public Button backBtn;
     public Button orderBtn;
+
+
+    void init() {
+        //loads class
+    }
 }
