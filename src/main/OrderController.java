@@ -26,7 +26,7 @@ public class OrderController {
     //Opens cart window and closes this window.
     public void goBack() throws IOException {
         logic.switchScene("fxml/CartFxml.fxml", backBtn, fxmlLoader);
-        ((OrderController) fxmlLoader.getController()).init();
+        ((CartController) fxmlLoader.getController()).init();
     }
 
     public void sendOrder() {
