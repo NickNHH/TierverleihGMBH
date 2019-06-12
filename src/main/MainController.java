@@ -18,13 +18,13 @@ public class MainController {
 
     //Opens the login page and closes title screen
     public void login() throws IOException {
-        logic.switchScene("fxml/LoginFxml.fxml", "Mitarbeiter Login", loginBtn, fxmlLoader);
+        logic.switchScene("fxml/LoginFxml.fxml", loginBtn, fxmlLoader);
         ((LoginController) fxmlLoader.getController()).init();
     }
 
     //Opens the animal species choosing page and closes title screen
     public void goToAnimals() throws IOException {
-        logic.switchScene("fxml/ChooseSpeciesFxml.fxml", "Tierverleih GMBH", animalBtn, fxmlLoader);
+        logic.switchScene("fxml/ChooseSpeciesFxml.fxml", animalBtn, fxmlLoader);
         ((ChooseSpeciesController) fxmlLoader.getController()).init();
     }
 }

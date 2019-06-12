@@ -20,13 +20,13 @@ public class ChooseAnimalController {
 
     //opens cart window and closes this window.
     public void goToCart() throws IOException {
-        logic.switchScene("fxml/CartFxml.fxml", "Warenkorb", cartBtn, fxmlLoader);
+        logic.switchScene("fxml/CartFxml.fxml", cartBtn, fxmlLoader);
         ((CartController) fxmlLoader.getController()).init();
     }
 
     //Opens species choosing window and closes this window.
     public void goBack() throws IOException {
-        logic.switchScene("fxml/MainFxml.fxml", "Tierverleih GMBH", backBtn, fxmlLoader);
+        logic.switchScene("fxml/MainFxml.fxml", backBtn, fxmlLoader);
         ((MainController) fxmlLoader.getController()).init();
     }
 }

@@ -20,7 +20,7 @@ public class AnimalOverviewController {
 
     //Opens main window and closes this window.
     public void goBack() throws IOException {
-        logic.switchScene("fxml/MainFxml.fxml", "Tierverleih GMBH", backBtn, fxmlLoader);
+        logic.switchScene("fxml/MainFxml.fxml", backBtn, fxmlLoader);
         ((MainController) fxmlLoader.getController()).init();
     }
 

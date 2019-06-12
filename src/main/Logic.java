@@ -10,12 +10,12 @@ import java.io.IOException;
 class Logic {
 
     //Closes one window and opens another one.
-    void switchScene(String fxml, String title, Button clickedButton, FXMLLoader fxmlLoader) throws IOException {
+    void switchScene(String fxml, Button clickedButton, FXMLLoader fxmlLoader) throws IOException {
         fxmlLoader.setLocation(getClass().getResource(fxml));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         Stage stage = new Stage();
 
-        stage.setTitle(title);
+        stage.setTitle("Tierverleih GMBH");
         stage.setScene(scene);
         stage.show();
 
