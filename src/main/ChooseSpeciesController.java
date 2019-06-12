@@ -28,7 +28,7 @@ public class ChooseSpeciesController {
 
     //Opens cart window and closes this window.
     public void goToCart() throws IOException {
-        logic.switchScene("fxml/CartFxml.fxml", "Warenkorb", backBtn, fxmlLoader);
+        logic.switchScene("fxml/CartFxml.fxml", "Warenkorb", cartBtn, fxmlLoader);
         ((CartController) fxmlLoader.getController()).init();
     }
 

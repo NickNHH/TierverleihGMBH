@@ -13,9 +13,14 @@
             <Font size="24.0" />
         </font>
     </Label>
-    <Button fx:id="backBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Zurück">
+    <Button fx:id="backBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Zurück" onAction="#goBack">
         <font>
             <Font size="16.0" />
         </font>
     </Button>
+   <Button fx:id="cartBtn" layoutX="633.0" layoutY="16.0" mnemonicParsing="false" onAction="#goToCart" prefHeight="45.0" prefWidth="153.0" text="Warenkorb">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Button>
 </Pane>
