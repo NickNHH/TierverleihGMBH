@@ -17,7 +17,7 @@
             <Font size="24.0" />
         </font>
     </Label>
-    <Button fx:id="backBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Zurück">
+    <Button fx:id="backBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="153.0" text="Zurück" onAction="#goBack">
         <font>
             <Font size="16.0" />
         </font>
@@ -81,7 +81,7 @@
         <TextField fx:id="zipCodeTf" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
         <TextField fx:id="reasonTf" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
     </GridPane>
-   <Button fx:id="orderBtn" layoutX="280.0" layoutY="519.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="241.0" text="Bestellen">
+   <Button fx:id="orderBtn" layoutX="280.0" layoutY="519.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="241.0" text="Bestellen" onAction="#sendOrder">
       <font>
          <Font size="16.0" />
       </font>
