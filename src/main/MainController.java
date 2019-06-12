@@ -11,25 +11,18 @@ public class MainController {
     public Button animalBtn;
     public Button loginBtn;
 
+    private FXMLLoader fxmlLoader = new FXMLLoader();
+    private Logic logic = new Logic();
+
     //Opens the login page and closes title screen
     public void login() throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("fxml/LoginFxml.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        logic.switchScene("fxml/LoginFxml.fxml", "Mitarbeiter Login", loginBtn, fxmlLoader);
         ((LoginController) fxmlLoader.getController()).init();
-        Stage stage = new Stage();
-
-        stage.setTitle("Mitarbeiter login");
-        stage.setScene(scene);
-        stage.show();
-
-        stage = (Stage) loginBtn.getScene().getWindow();
-        stage.close();
     }
 
-    //Opens the animal overview page and closes title screen
-    public void animals() {
-
+    //Opens the animal species choosing page and closes title screen
+    public void goToAnimals() throws IOException {
+        logic.switchScene("fxml/ChooseSpeciesFxml.fxml", "Tierverleih GMBH", animalBtn, fxmlLoader);
+        ((ChooseSpeciesController) fxmlLoader.getController()).init();
     }
 }

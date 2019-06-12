@@ -16,6 +16,10 @@ public class ChooseSpeciesController {
     public ImageView guentherdikdikView;
     public Pane pane;
 
+    void init() {
+        //Loads class
+    }
+
     public void loadGiraffes() {
     }
 

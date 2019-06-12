@@ -21,7 +21,7 @@
             <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="306.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Button fx:id="animalBtn" mnemonicParsing="false" prefHeight="114.0" prefWidth="633.0" text="Zur Auswahl der Tiere" onAction="#animals">
+        <Button fx:id="animalBtn" mnemonicParsing="false" prefHeight="114.0" prefWidth="633.0" text="Zur Auswahl der Tiere" onAction="#goToAnimals">
             <font>
                 <Font size="16.0" />
             </font>

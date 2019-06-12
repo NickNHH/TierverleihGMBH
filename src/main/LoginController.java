@@ -7,5 +7,7 @@ public class LoginController {
     public Button backBtn;
     public TextField passwordTf;
 
-    public void init() { }
+    void init() {
+        //Loads class
+    }
 }
