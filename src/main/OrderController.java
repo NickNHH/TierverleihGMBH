@@ -30,7 +30,8 @@ public class OrderController {
     }
 
     public void sendOrder() {
-        /* TODO: - This window should close after button click
+        /*
+         * TODO: - This window should close after button click
          *       - Save all data (Conent of shopping cart + personal data from this form) in an ArrayList or similar, so we can use this later again.
          */
     }

@@ -38,6 +38,11 @@ public class ChooseSpeciesController {
         ((MainController) fxmlLoader.getController()).init();
     }
 
+    /*
+     * TODO: For ALL following 6 load methods:
+     *       - Close this window and open the ChooseAnimalController page after mouse click
+     *       - Load the correct animal in e.g. ArrayList, so we can call it from the ChooseAnimalController class
+     */
     public void loadGiraffes() {
     }
 

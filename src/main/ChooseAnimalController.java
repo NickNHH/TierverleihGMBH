@@ -14,6 +14,10 @@ public class ChooseAnimalController {
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
 
+    void init() {
+        //load class
+    }
+
     //opens cart window and closes this window.
     public void goToCart() throws IOException {
         logic.switchScene("fxml/CartFxml.fxml", "Warenkorb", cartBtn, fxmlLoader);
