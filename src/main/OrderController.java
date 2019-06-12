@@ -12,4 +12,8 @@ public class OrderController {
     public TextField zipCodeTf;
     public TextField reasonTf;
     public Button orderBtn;
+
+    void init() {
+        //loads class
+    }
 }
