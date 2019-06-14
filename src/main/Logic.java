@@ -19,7 +19,9 @@ class Logic {
         stage.setScene(scene);
         stage.show();
 
-        stage = (Stage) clickedButton.getScene().getWindow();
-        stage.close();
+        if (clickedButton != null) {
+            stage = (Stage) clickedButton.getScene().getWindow();
+            stage.close();
+        }
     }
 }

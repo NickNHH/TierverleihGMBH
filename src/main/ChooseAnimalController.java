@@ -26,7 +26,7 @@ public class ChooseAnimalController {
 
     //Opens species choosing window and closes this window.
     public void goBack() throws IOException {
-        logic.switchScene("fxml/MainFxml.fxml", backBtn, fxmlLoader);
-        ((MainController) fxmlLoader.getController()).init();
+        logic.switchScene("fxml/ChooseSpeciesFxml.fxml", backBtn, fxmlLoader);
+        ((ChooseSpeciesController) fxmlLoader.getController()).init();
     }
 }
