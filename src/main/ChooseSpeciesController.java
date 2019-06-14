@@ -3,6 +3,7 @@ package main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
@@ -24,6 +25,7 @@ public class ChooseSpeciesController {
 
     void init() {
         //Loads class
+        fillImageViews();
     }
 
     //Opens cart window and closes this window.
@@ -67,5 +69,14 @@ public class ChooseSpeciesController {
 
     public void normalMouse() {
         pane.setCursor(Cursor.DEFAULT);
+    }
+
+    private void fillImageViews() {
+        giraffeView.setImage(new Image("giraffe.jpg"));
+        lorisView.setImage(new Image("loris.jpg"));
+        rabbitView.setImage(new Image("rabbit.jpg"));
+        guentherdikdikView.setImage(new Image("guenther.jpg"));
+        batView.setImage(new Image("bat.jpeg"));
+        foxView.setImage(new Image("fox.jpg"));
     }
 }
