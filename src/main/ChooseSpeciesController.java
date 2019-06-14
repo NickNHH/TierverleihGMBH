@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -40,27 +41,34 @@ public class ChooseSpeciesController {
         ((MainController) fxmlLoader.getController()).init();
     }
 
-    /*
-     * TODO: For ALL following 6 load methods:
-     *       - Close this window and open the ChooseAnimalController page after mouse click
-     *       - Load the correct animal in e.g. ArrayList, so we can call it from the ChooseAnimalController class
-     */
-    public void loadGiraffes() {
+    public void loadGiraffes() throws IOException {
+        //TODO: Load all giraffes in an List
+        switchScene();
     }
 
-    public void loadLoris() {
+    public void loadLoris() throws IOException {
+        //TODO: Load all loris' in an List
+        switchScene();
     }
 
-    public void loadRabbits() {
+    public void loadRabbits() throws IOException {
+        //TODO: Load all rabbits in an List
+        switchScene();
     }
 
-    public void loadGuenthers() {
+    public void loadGuenthers() throws IOException {
+        //TODO: Load all guenthers in an List
+        switchScene();
     }
 
-    public void loadBats() {
+    public void loadBats() throws IOException {
+        //TODO: Load all bats in an List
+        switchScene();
     }
 
-    public void loadFoxes() {
+    public void loadFoxes() throws IOException {
+        //TODO: Load all foxes in an List
+        switchScene();
     }
 
     public void handMouse() {
@@ -78,5 +86,13 @@ public class ChooseSpeciesController {
         guentherdikdikView.setImage(new Image("guenther.jpg"));
         batView.setImage(new Image("bat.jpeg"));
         foxView.setImage(new Image("fox.jpg"));
+    }
+
+    private void switchScene() throws IOException {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        stage.close();
+
+        logic.switchScene("fxml/ChooseAnimalFxml.fxml", null, fxmlLoader);
+        ((ChooseAnimalController) fxmlLoader.getController()).init();
     }
 }
