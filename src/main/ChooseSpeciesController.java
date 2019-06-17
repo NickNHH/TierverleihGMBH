@@ -43,6 +43,7 @@ public class ChooseSpeciesController {
 
     public void loadGiraffes() throws IOException {
         //TODO: Load all giraffes in an List
+        AnimalList.addGiraffes();
         switchScene();
     }
 
@@ -53,6 +54,7 @@ public class ChooseSpeciesController {
 
     public void loadRabbits() throws IOException {
         //TODO: Load all rabbits in an List
+        AnimalList.addRabbits();
         switchScene();
     }
 
