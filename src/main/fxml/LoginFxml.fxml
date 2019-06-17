@@ -25,7 +25,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordTf" prefHeight="25.0" prefWidth="367.0" GridPane.columnIndex="1" />
+      <TextField fx:id="passwordTf" onkeyPressed="#enter" prefHeight="25.0" prefWidth="367.0" GridPane.columnIndex="1" />
     </GridPane>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="77.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
     <Label layoutX="308.0" layoutY="21.0" text="Mitarbeiter login" textFill="WHITE">
