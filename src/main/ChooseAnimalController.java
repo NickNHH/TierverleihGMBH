@@ -20,7 +20,7 @@ public class ChooseAnimalController {
 
     void init() {
         //load class
-        animals = AnimalList.getAllAnimals();
+        animals = AnimalList.getChosenAnimals();
 
         for (int i = 0; i < animals.size(); i++) {
             ImageView imageView = new ImageView();

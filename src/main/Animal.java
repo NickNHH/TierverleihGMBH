@@ -1,15 +1,15 @@
 package main;
 
-import javax.swing.text.html.ImageView;
+import java.io.Serializable;
 
-public class Animal {
+public abstract class Animal implements Serializable {
 
     private String picture;
     private String name;
     private String status;
     private String description;
 
-    Animal(String picture, String name, String status, String description) {
+    public Animal(String picture, String name, String status, String description) {
         this.picture = picture;
         this.name = name;
         this.status = status;

@@ -1,4 +1,6 @@
-package main;
+package main.animals;
+
+import main.Animal;
 
 public class Giraffe extends Animal {
 

@@ -14,6 +14,8 @@ public class Main extends Application {
         primaryStage.setTitle("Tierverleih GMBH");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+
+        AnimalFile.saveAnimalsFile();
     }
 
 
