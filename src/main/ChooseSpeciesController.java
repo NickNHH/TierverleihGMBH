@@ -42,34 +42,32 @@ public class ChooseSpeciesController {
     }
 
     public void loadGiraffes() throws IOException {
-        //TODO: Load all giraffes in an List
         AnimalList.addGiraffes();
         switchScene();
     }
 
     public void loadLoris() throws IOException {
-        //TODO: Load all loris' in an List
+        AnimalList.addLoris();
         switchScene();
     }
 
     public void loadRabbits() throws IOException {
-        //TODO: Load all rabbits in an List
         AnimalList.addRabbits();
         switchScene();
     }
 
     public void loadGuenthers() throws IOException {
-        //TODO: Load all guenthers in an List
+        AnimalList.addGuenthers();
         switchScene();
     }
 
     public void loadBats() throws IOException {
-        //TODO: Load all bats in an List
+        AnimalList.addBats();
         switchScene();
     }
 
     public void loadFoxes() throws IOException {
-        //TODO: Load all foxes in an List
+        AnimalList.addFoxes();
         switchScene();
     }
 
