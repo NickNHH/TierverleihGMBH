@@ -1,7 +1,6 @@
 package main;
 
-import main.animals.Giraffe;
-import main.animals.Rabbit;
+import main.animals.*;
 
 import java.util.ArrayList;
 
@@ -32,6 +31,46 @@ public class AnimalList {
 
         for (Animal animal : AnimalFile.readAnimalsFile()) {
             if (animal.getClass() == Rabbit.class) {
+                chosenAnimals.add(animal);
+            }
+        }
+    }
+
+    static void addBats() {
+        chosenAnimals.clear();
+
+        for (Animal animal : AnimalFile.readAnimalsFile()) {
+            if (animal.getClass() == Bat.class) {
+                chosenAnimals.add(animal);
+            }
+        }
+    }
+
+    static void addLoris() {
+        chosenAnimals.clear();
+
+        for (Animal animal : AnimalFile.readAnimalsFile()) {
+            if (animal.getClass() == Loris.class) {
+                chosenAnimals.add(animal);
+            }
+        }
+    }
+
+    static void addGuenthers() {
+        chosenAnimals.clear();
+
+        for (Animal animal : AnimalFile.readAnimalsFile()) {
+            if (animal.getClass() == Guenther.class) {
+                chosenAnimals.add(animal);
+            }
+        }
+    }
+
+    static void addFoxes() {
+        chosenAnimals.clear();
+
+        for (Animal animal : AnimalFile.readAnimalsFile()) {
+            if (animal.getClass() == Fox.class) {
                 chosenAnimals.add(animal);
             }
         }
