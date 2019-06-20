@@ -14,6 +14,7 @@ public class ChooseAnimalController {
     public Button cartBtn;
     public VBox vBox;
 
+    private Gui gui = new Gui();
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
 
@@ -27,19 +28,21 @@ public class ChooseAnimalController {
             HBox hBoxTop = new HBox();
             HBox hBoxBottom = new HBox();
 
-            splitPaneHor.getItems().add(logic.createImageView(i));
+            splitPaneHor.getItems().add(gui.createImageView(i));
             splitPaneHor.getItems().add(splitPaneVer);
             splitPaneVer.getItems().add(hBoxTop);
             splitPaneVer.getItems().add(hBoxBottom);
-            hBoxTop.getChildren().add(logic.createNameLabel(i));
-            hBoxTop.getChildren().add(logic.createStatusLabel(i));
-            hBoxBottom.getChildren().add(logic.createDescLabel(i));
-            hBoxBottom.getChildren().add(logic.createAddButton(i));
+            hBoxTop.getChildren().add(gui.createNameLabel(i));
+            hBoxTop.getChildren().add(gui.createStatusLabel(i));
+            hBoxBottom.getChildren().add(gui.createDescLabel(i));
+            hBoxBottom.getChildren().add(gui.createAddButton(i));
 
             vBox.getChildren().add(splitPaneHor);
             vBox.getChildren().add(splitPaneVer);
             vBox.getChildren().add(hBoxTop);
             vBox.getChildren().add(hBoxBottom);
+
+            gui.addSplitPane(splitPaneHor);
         }
     }
 
