@@ -7,3 +7,5 @@ out/
 # Eclipse
 .classpath
 .project
+
+animals.ser
