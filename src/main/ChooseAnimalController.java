@@ -1,15 +1,18 @@
 package main;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.SplitPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class ChooseAnimalController {
-    public Pane pane;
     public Button backBtn;
     public Button cartBtn;
+    public VBox vBox;
 
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
@@ -17,11 +20,26 @@ public class ChooseAnimalController {
     void init() {
         //load class
         for (int i = 0; i < AnimalList.getChosenAnimals().size(); i++) {
-            pane.getChildren().add(logic.createImageView(i));
-            pane.getChildren().add(logic.createNameLabel(i));
-            pane.getChildren().add(logic.createStatusLabel(i));
-            pane.getChildren().add(logic.createDescLabel(i));
-            pane.getChildren().add(logic.createAddButton(i));
+            SplitPane splitPaneHor = new SplitPane();
+            splitPaneHor.setOrientation(Orientation.HORIZONTAL);
+            SplitPane splitPaneVer = new SplitPane();
+            splitPaneVer.setOrientation(Orientation.VERTICAL);
+            HBox hBoxTop = new HBox();
+            HBox hBoxBottom = new HBox();
+
+            splitPaneHor.getItems().add(logic.createImageView(i));
+            splitPaneHor.getItems().add(splitPaneVer);
+            splitPaneVer.getItems().add(hBoxTop);
+            splitPaneVer.getItems().add(hBoxBottom);
+            hBoxTop.getChildren().add(logic.createNameLabel(i));
+            hBoxTop.getChildren().add(logic.createStatusLabel(i));
+            hBoxBottom.getChildren().add(logic.createDescLabel(i));
+            hBoxBottom.getChildren().add(logic.createAddButton(i));
+
+            vBox.getChildren().add(splitPaneHor);
+            vBox.getChildren().add(splitPaneVer);
+            vBox.getChildren().add(hBoxTop);
+            vBox.getChildren().add(hBoxBottom);
         }
     }
 
