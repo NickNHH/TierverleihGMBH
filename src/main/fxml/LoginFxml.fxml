@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
+<Pane  fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="129.0" layoutX="140.0" layoutY="234.0" stroke="BLACK" strokeType="INSIDE" width="540.0" />
     <GridPane layoutX="198.0" layoutY="262.0" prefHeight="77.0" prefWidth="425.0">
         <columnConstraints>
@@ -25,7 +25,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordTf" onkeyPressed="#enter" prefHeight="25.0" prefWidth="367.0" GridPane.columnIndex="1" />
+      <PasswordField fx:id="passwordTf" onKeyPressed="#enter" prefHeight="25.0" prefWidth="367.0" GridPane.columnIndex="1" />
     </GridPane>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="77.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
     <Label layoutX="308.0" layoutY="21.0" text="Mitarbeiter login" textFill="WHITE">
