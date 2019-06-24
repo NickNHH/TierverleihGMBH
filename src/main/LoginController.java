@@ -30,7 +30,7 @@ public class LoginController {
 
 	public void enter() {
 		pane.setOnKeyPressed(event -> {
-            if (passwordTf.getText().equals("tierequälen")) {
+            if (passwordTf.getText().equals("tierequaelen")) {
                 try {
                     logic.switchScene("fxml/AnimalOverviewFxml.fxml", null, fxmlLoader);
                       Stage stage = (Stage) pane.getScene().getWindow();
