@@ -11,7 +11,10 @@ public abstract class AnimalFile implements Serializable {
 
     //saves all animals in this arrayList
     private static ArrayList<Animal> allAnimals = new ArrayList<>();
-
+    
+    public static ArrayList<Animal> getAnimalList() {
+        return allAnimals;
+    }
     //read the file and get the content
     static ArrayList<Animal> readAnimalsFile() {
         try {
