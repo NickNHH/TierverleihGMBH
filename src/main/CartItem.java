@@ -13,4 +13,8 @@ public class CartItem {
     public static void addItem(Animal animal) {
         cartItems.add(animal);
     }
+
+    public static void deleteItem(Animal animal) {
+        cartItems.remove(animal);
+    }
 }

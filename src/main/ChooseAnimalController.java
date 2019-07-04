@@ -11,14 +11,19 @@ public class ChooseAnimalController {
     public Button cartBtn;
     public VBox vBox;
 
-    private Gui gui = new Gui();
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
 
     void init() {
         //load class
-        for (int i = 0; i < AnimalList.getChosenAnimals().size(); i++) {
+        Gui gui = Gui.getInstance();
+        /*for (int i = 0; i <= AnimalList.getChosenAnimals().size(); i++) {
             gui.createAnimalGUI(i, vBox, false);
+            System.out.println(i);
+            gui.addSplitPane();
+        }*/
+        for (Animal animal : AnimalList.getChosenAnimals()) {
+            gui.createAnimalGUI(animal.getId(), vBox, false);
             gui.addSplitPane();
         }
     }
