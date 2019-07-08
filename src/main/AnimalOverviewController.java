@@ -22,8 +22,6 @@ public class AnimalOverviewController implements Initializable{
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
     
-    private Gui gui = new Gui();
-
     void init() {
         //load class
     }
@@ -43,9 +41,14 @@ public class AnimalOverviewController implements Initializable{
     //
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		for(int i = 0; i < AnimalFile.getAnimalList().size(); i++) {
-			gui.createAnimalGUI(i, showList, false);
+		int i = 0;
+		
+		for(Animal animal : AnimalFile.getAnimalList()) {
+			animal.setId(i);
+			Gui.getInstance().createAnimalGUI(animal, showList, "list");
 			//showList.getChildren().add(animal.getName());
+			
+			i++;
 		}
 	}
 }

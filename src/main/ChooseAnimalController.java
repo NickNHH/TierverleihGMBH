@@ -22,7 +22,7 @@ public class ChooseAnimalController {
 
         for (Animal animal : AnimalList.getChosenAnimals()) {
             animal.setId(i);
-            gui.createAnimalGUI(animal, vBox, false);
+            gui.createAnimalGUI(animal, vBox, "choose");
             gui.addSplitPane();
 
             i++;
