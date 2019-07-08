@@ -16,15 +16,16 @@ public class ChooseAnimalController {
 
     void init() {
         //load class
+        int i = 0;
         Gui gui = Gui.getInstance();
-        /*for (int i = 0; i <= AnimalList.getChosenAnimals().size(); i++) {
-            gui.createAnimalGUI(i, vBox, false);
-            System.out.println(i);
-            gui.addSplitPane();
-        }*/
+        gui.getAllSplitPanes().clear();
+
         for (Animal animal : AnimalList.getChosenAnimals()) {
-            gui.createAnimalGUI(animal.getId(), vBox, false);
+            animal.setId(i);
+            gui.createAnimalGUI(animal, vBox, false);
             gui.addSplitPane();
+
+            i++;
         }
     }
 

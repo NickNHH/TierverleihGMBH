@@ -16,10 +16,15 @@ public class CartController {
 
     void init() {
         //loads class
+        int i = 0;
         Gui gui = Gui.getInstance();
 
-        for (Animal animal : AnimalList.getChosenAnimals()) {
-            gui.createAnimalGUI(animal.getId(), vBox, true);
+        for (Animal animal : CartItem.getCartItems()) {
+            animal.setId(i);
+            gui.createAnimalGUI(animal, vBox, true);
+            gui.addSplitPane();
+
+            i++;
         }
     }
 

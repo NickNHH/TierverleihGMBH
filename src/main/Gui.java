@@ -29,7 +29,8 @@ public class Gui {
     private ArrayList<SplitPane> allSplitPanes = new ArrayList<>();
 
     //Private constructor
-    private Gui() { }
+    private Gui() {
+    }
 
     //Static instance method
     static Gui getInstance() {
@@ -44,118 +45,118 @@ public class Gui {
         allSplitPanes.add(splitPaneHor);
     }
 
-    private ImageView createImageView(int id, boolean isCart) {
+    private ImageView createImageView(Animal animal, boolean isCart) {
         ImageView imageView = new ImageView();
         if (isCart) {
-            imageView.setImage(new Image(CartItem.getCartItems().get(id).getPicture()));
+            imageView.setImage(new Image(CartItem.getCartItems().get(animal.getId()).getPicture()));
         } else {
-            imageView.setImage(new Image(AnimalList.getChosenAnimals().get(id).getPicture()));
+            imageView.setImage(new Image(AnimalList.getChosenAnimals().get(animal.getId()).getPicture()));
         }
 
         imageView.setFitWidth(IMAGE_VIEW_SIZE);
         imageView.setFitHeight(IMAGE_VIEW_SIZE);
-        imageView.setY((id * SPACE_BETWEEN_VIEWS) + INIT_SPACE_FROM_TOP);
+        imageView.setY((animal.getId() * SPACE_BETWEEN_VIEWS) + INIT_SPACE_FROM_TOP);
 
         return imageView;
     }
 
-    private Label createNameLabel(int id, boolean isCart) {
+    private Label createNameLabel(Animal animal, boolean isCart) {
         Label name;
         if (isCart) {
-            name = new Label(CartItem.getCartItems().get(id).getName());
+            name = new Label(CartItem.getCartItems().get(animal.getId()).getName());
         } else {
-            name = new Label(AnimalList.getChosenAnimals().get(id).getName());
+            name = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getName());
         }
 
-        setLabel(name, id, NAME_LABEL_WIDTH);
+        setLabel(animal, name, NAME_LABEL_WIDTH);
         name.setLayoutX(IMAGE_VIEW_SIZE);
 
         return name;
     }
 
-    private Label createStatusLabel(int id, boolean isCart) {
+    private Label createStatusLabel(Animal animal, boolean isCart) {
         Label status;
         if (isCart) {
-            status = new Label(CartItem.getCartItems().get(id).getStatus());
+            status = new Label(CartItem.getCartItems().get(animal.getId()).getStatus());
         } else {
-            status = new Label(AnimalList.getChosenAnimals().get(id).getStatus());
+            status = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getStatus());
         }
 
-        setLabel(status, id, STATUS_LABEL_WIDTH);
+        setLabel(animal, status, STATUS_LABEL_WIDTH);
         status.setLayoutX(IMAGE_VIEW_SIZE + NAME_LABEL_WIDTH);
 
         return status;
     }
 
-    private Label createDescLabel(int id, boolean isCart) {
+    private Label createDescLabel(Animal animal, boolean isCart) {
         Label desc;
         if (isCart) {
-            desc = new Label(CartItem.getCartItems().get(id).getDescription());
+            desc = new Label(CartItem.getCartItems().get(animal.getId()).getDescription());
         } else {
-            desc = new Label(AnimalList.getChosenAnimals().get(id).getDescription());
+            desc = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getDescription());
         }
 
-        setLabel(desc, id, DESC_LABEL_WIDTH);
+        setLabel(animal, desc, DESC_LABEL_WIDTH);
         desc.setLayoutX(IMAGE_VIEW_SIZE);
-        desc.setLayoutY((id * SPACE_BETWEEN_VIEWS + LABEL_HEIGHT) + INIT_SPACE_FROM_TOP);
+        desc.setLayoutY((animal.getId() * SPACE_BETWEEN_VIEWS + LABEL_HEIGHT) + INIT_SPACE_FROM_TOP);
 
         return desc;
     }
 
-    private Button createButton(int id) {
+    private Button createButton(Animal animal) {
         Button button = new Button();
         button.setFont(new Font(25));
         button.setAlignment(Pos.CENTER);
         button.setLayoutX(IMAGE_VIEW_SIZE + DESC_LABEL_WIDTH);
-        button.setLayoutY((id * SPACE_BETWEEN_VIEWS + LABEL_HEIGHT) + INIT_SPACE_FROM_TOP);
+        button.setLayoutY((animal.getId() * SPACE_BETWEEN_VIEWS + LABEL_HEIGHT) + INIT_SPACE_FROM_TOP);
         button.setMinWidth(BUTTON_WIDTH);
         button.setPrefHeight(LABEL_HEIGHT);
 
         return button;
     }
 
-    private Button createAddButton(int id, VBox vBox) {
-        Button button = createButton(id);
+    private Button createAddButton(Animal animal, VBox vBox) {
+        Button button = createButton(animal);
 
         button.setText("Add");
 
         button.setOnAction(e -> {
-        System.out.println("vor: " + allSplitPanes.size());
-            CartItem.addItem(AnimalList.getChosenAnimals().get(id));
-            vBox.getChildren().remove(allSplitPanes.get(id));
-            allSplitPanes.remove(id);
+            System.out.println("vor: " + allSplitPanes.size());
+            CartItem.addItem(AnimalList.getChosenAnimals().get(animal.getId()));
+            vBox.getChildren().remove(allSplitPanes.get(animal.getId()));
+            allSplitPanes.remove(animal.getId());
             System.out.println("nach: " + allSplitPanes.size());
         });
 
         return button;
     }
 
-    private Button createDeleteButton(int id, VBox vBox) {
-        Button button = createButton(id);
+    private Button createDeleteButton(Animal animal, VBox vBox) {
+        Button button = createButton(animal);
 
         button.setText("Delete");
         button.setFont(new Font(22));
 
         button.setOnAction(e -> {
-            CartItem.deleteItem(AnimalList.getChosenAnimals().get(id));
+            CartItem.deleteItem(AnimalList.getChosenAnimals().get(animal.getId()));
             System.out.println(getAllSplitPanes().size());
             vBox.getChildren().removeAll(allSplitPanes);
-            allSplitPanes.remove(id);
+            allSplitPanes.remove(animal.getId());
         });
 
         return button;
     }
 
-    private void setLabel(Label label, int id, int width) {
+    private void setLabel(Animal animal, Label label, int width) {
         label.setFont(new Font(25));
         label.setAlignment(Pos.CENTER);
-        label.setLayoutY((id * SPACE_BETWEEN_VIEWS) + INIT_SPACE_FROM_TOP);
+        label.setLayoutY((animal.getId() * SPACE_BETWEEN_VIEWS) + INIT_SPACE_FROM_TOP);
         label.setMinWidth(width);
         label.setPrefHeight(LABEL_HEIGHT);
         label.setStyle("-fx-border-color: black");
     }
 
-    void createAnimalGUI(int id, VBox vBox, boolean isCart) {
+    void createAnimalGUI(Animal animal, VBox vBox, boolean isCart) {
         splitPaneHor = new SplitPane();
         splitPaneHor.setOrientation(Orientation.HORIZONTAL);
         SplitPane splitPaneVer = new SplitPane();
@@ -163,18 +164,18 @@ public class Gui {
         HBox hBoxTop = new HBox();
         HBox hBoxBottom = new HBox();
 
-        splitPaneHor.getItems().add(createImageView(id, isCart));
+        splitPaneHor.getItems().add(createImageView(animal, isCart));
         splitPaneHor.getItems().add(splitPaneVer);
         splitPaneVer.getItems().add(hBoxTop);
         splitPaneVer.getItems().add(hBoxBottom);
-        hBoxTop.getChildren().add(createNameLabel(id, isCart));
-        hBoxTop.getChildren().add(createStatusLabel(id, isCart));
-        hBoxBottom.getChildren().add(createDescLabel(id, isCart));
+        hBoxTop.getChildren().add(createNameLabel(animal, isCart));
+        hBoxTop.getChildren().add(createStatusLabel(animal, isCart));
+        hBoxBottom.getChildren().add(createDescLabel(animal, isCart));
 
         if (isCart) {
-            hBoxBottom.getChildren().add(createDeleteButton(id, vBox));
+            hBoxBottom.getChildren().add(createDeleteButton(animal, vBox));
         } else {
-            hBoxBottom.getChildren().add(createAddButton(id, vBox));
+            hBoxBottom.getChildren().add(createAddButton(animal, vBox));
         }
 
         vBox.getChildren().add(splitPaneHor);
