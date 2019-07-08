@@ -50,22 +50,22 @@ public abstract class AnimalFile implements Serializable {
 
     //If ArrayList is empty, write default animals in it.
     private static void addAnimals() {
-        allAnimals.add(new Giraffe("giraffe.jpg", "Livio", "available", "3 days old"));
-        allAnimals.add(new Giraffe("giraffe.jpg", "Simon", "available", "3 weeks old"));
+        allAnimals.add(new Giraffe(0, "giraffe.jpg", "Livio", "available", "3 days old"));
+        allAnimals.add(new Giraffe(1, "giraffe.jpg", "Simon", "available", "3 weeks old"));
 
-        allAnimals.add(new Rabbit("rabbit.jpg", "Joel", "available", "1 month old"));
-        allAnimals.add(new Rabbit("rabbit.jpg", "Nico", "available", "2 months old"));
+        allAnimals.add(new Rabbit(0, "rabbit.jpg", "Joel", "available", "1 month old"));
+        allAnimals.add(new Rabbit(1, "rabbit.jpg", "Nico", "available", "2 months old"));
 
-        allAnimals.add(new Bat("bat.jpeg", "Oliver", "available", "1 month old"));
-        allAnimals.add(new Bat("bat.jpeg", "Jeremy", "available", "2 months old"));
+        allAnimals.add(new Bat(0, "bat.jpeg", "Oliver", "available", "1 month old"));
+        allAnimals.add(new Bat(1, "bat.jpeg", "Jeremy", "available", "2 months old"));
 
-        allAnimals.add(new Loris("loris.jpg", "Loris", "available", "1 month old"));
-        allAnimals.add(new Loris("loris.jpg", "Noel", "available", "2 months old"));
+        allAnimals.add(new Loris(0, "loris.jpg", "Loris", "available", "1 month old"));
+        allAnimals.add(new Loris(1, "loris.jpg", "Noel", "available", "2 months old"));
 
-        allAnimals.add(new Guenther("guenther.jpg", "Philipp", "available", "1 month old"));
-        allAnimals.add(new Guenther("guenther.jpg", "Marco", "available", "2 months old"));
+        allAnimals.add(new Guenther(0, "guenther.jpg", "Philipp", "available", "1 month old"));
+        allAnimals.add(new Guenther(1, "guenther.jpg", "Marco", "available", "2 months old"));
 
-        allAnimals.add(new Fox("fox.jpg", "Pablo", "available", "1 month old"));
-        allAnimals.add(new Fox("fox.jpg", "DiMaria", "available", "2 months old"));
+        allAnimals.add(new Fox(0, "fox.jpg", "Pablo", "available", "1 month old"));
+        allAnimals.add(new Fox(1, "fox.jpg", "DiMaria", "available", "2 months old"));
     }
 }
