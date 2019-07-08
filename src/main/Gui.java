@@ -45,12 +45,14 @@ public class Gui {
         allSplitPanes.add(splitPaneHor);
     }
 
-    private ImageView createImageView(Animal animal, boolean isCart) {
+    private ImageView createImageView(Animal animal, String location) {
         ImageView imageView = new ImageView();
-        if (isCart) {
+        if (location.equals("cart")) {
             imageView.setImage(new Image(CartItem.getCartItems().get(animal.getId()).getPicture()));
-        } else {
+        } if (location.equals("choose")) {
             imageView.setImage(new Image(AnimalList.getChosenAnimals().get(animal.getId()).getPicture()));
+        } else if (location.equals("list")) {
+        	imageView.setImage(new Image(AnimalFile.getAnimalList().get(animal.getId()).getPicture()));
         }
 
         imageView.setFitWidth(IMAGE_VIEW_SIZE);
@@ -60,42 +62,45 @@ public class Gui {
         return imageView;
     }
 
-    private Label createNameLabel(Animal animal, boolean isCart) {
-        Label name;
-        if (isCart) {
-            name = new Label(CartItem.getCartItems().get(animal.getId()).getName());
-        } else {
-            name = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getName());
+    private Label createNameLabel(Animal animal, String location) {
+        Label name= new Label();
+        if (location.equals("cart")) {
+        	name = new Label(CartItem.getCartItems().get(animal.getId()).getName());
+        } if (location.equals("choose")) {
+        	name = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getName());
+        } else if (location.equals("list")) {
+        	name = new Label(AnimalFile.getAnimalList().get(animal.getId()).getName());
         }
-
         setLabel(animal, name, NAME_LABEL_WIDTH);
         name.setLayoutX(IMAGE_VIEW_SIZE);
 
         return name;
     }
 
-    private Label createStatusLabel(Animal animal, boolean isCart) {
-        Label status;
-        if (isCart) {
-            status = new Label(CartItem.getCartItems().get(animal.getId()).getStatus());
-        } else {
-            status = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getStatus());
+    private Label createStatusLabel(Animal animal, String location) {
+        Label status = new Label();
+        if (location.equals("cart")) {
+        	status = new Label(CartItem.getCartItems().get(animal.getId()).getStatus());
+        } if (location.equals("choose")) {
+        	status = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getStatus());
+        } else if (location.equals("list")) {
+        	status = new Label(AnimalFile.getAnimalList().get(animal.getId()).getStatus());
         }
-
         setLabel(animal, status, STATUS_LABEL_WIDTH);
         status.setLayoutX(IMAGE_VIEW_SIZE + NAME_LABEL_WIDTH);
 
         return status;
     }
 
-    private Label createDescLabel(Animal animal, boolean isCart) {
-        Label desc;
-        if (isCart) {
-            desc = new Label(CartItem.getCartItems().get(animal.getId()).getDescription());
-        } else {
-            desc = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getDescription());
+    private Label createDescLabel(Animal animal, String location) {
+        Label desc = new Label();
+        if (location.equals("cart")) {
+        	desc = new Label(CartItem.getCartItems().get(animal.getId()).getDescription());
+        } if (location.equals("choose")) {
+        	desc = new Label(AnimalList.getChosenAnimals().get(animal.getId()).getDescription());
+        } else if (location.equals("list")) {
+        	desc = new Label(AnimalFile.getAnimalList().get(animal.getId()).getDescription());
         }
-
         setLabel(animal, desc, DESC_LABEL_WIDTH);
         desc.setLayoutX(IMAGE_VIEW_SIZE);
         desc.setLayoutY((animal.getId() * SPACE_BETWEEN_VIEWS + LABEL_HEIGHT) + INIT_SPACE_FROM_TOP);
@@ -156,7 +161,7 @@ public class Gui {
         label.setStyle("-fx-border-color: black");
     }
 
-    void createAnimalGUI(Animal animal, VBox vBox, boolean isCart) {
+    void createAnimalGUI(Animal animal, VBox vBox, String location) {
         splitPaneHor = new SplitPane();
         splitPaneHor.setOrientation(Orientation.HORIZONTAL);
         SplitPane splitPaneVer = new SplitPane();
@@ -164,20 +169,19 @@ public class Gui {
         HBox hBoxTop = new HBox();
         HBox hBoxBottom = new HBox();
 
-        splitPaneHor.getItems().add(createImageView(animal, isCart));
+        splitPaneHor.getItems().add(createImageView(animal, location));
         splitPaneHor.getItems().add(splitPaneVer);
         splitPaneVer.getItems().add(hBoxTop);
         splitPaneVer.getItems().add(hBoxBottom);
-        hBoxTop.getChildren().add(createNameLabel(animal, isCart));
-        hBoxTop.getChildren().add(createStatusLabel(animal, isCart));
-        hBoxBottom.getChildren().add(createDescLabel(animal, isCart));
+        hBoxTop.getChildren().add(createNameLabel(animal, location));
+        hBoxTop.getChildren().add(createStatusLabel(animal, location));
+        hBoxBottom.getChildren().add(createDescLabel(animal, location));
 
-        if (isCart) {
+        if (location.equals("cart")) {
             hBoxBottom.getChildren().add(createDeleteButton(animal, vBox));
-        } else {
+        } else if(location.equals("choose")) {
             hBoxBottom.getChildren().add(createAddButton(animal, vBox));
         }
-
         vBox.getChildren().add(splitPaneHor);
         /*vBox.getChildren().add(splitPaneVer);
         vBox.getChildren().add(hBoxTop);

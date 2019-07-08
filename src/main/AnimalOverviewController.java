@@ -1,19 +1,27 @@
 package main;
 
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class AnimalOverviewController {
+
+public class AnimalOverviewController implements Initializable{
     public Pane pane;
+    public VBox showList;
     public Button backBtn;
     public Button newAnimalBtn;
-
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
-
+    
     void init() {
         //load class
     }
@@ -26,8 +34,21 @@ public class AnimalOverviewController {
 
     //Create new entry for animal
     public void newAnimal() {
-        /*
+          /*
          * TODO: - On button click, add new GUI elements like for the other animals (Pic, name, status, description)
          */
     }
+    //
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		int i = 0;
+		
+		for(Animal animal : AnimalFile.getAnimalList()) {
+			animal.setId(i);
+			Gui.getInstance().createAnimalGUI(animal, showList, "list");
+			//showList.getChildren().add(animal.getName());
+			
+			i++;
+		}
+	}
 }

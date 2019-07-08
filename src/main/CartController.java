@@ -21,7 +21,7 @@ public class CartController {
 
         for (Animal animal : CartItem.getCartItems()) {
             animal.setId(i);
-            gui.createAnimalGUI(animal, vBox, true);
+            gui.createAnimalGUI(animal, vBox, "cart");
             gui.addSplitPane();
 
             i++;
