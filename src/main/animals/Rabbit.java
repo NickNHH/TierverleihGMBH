@@ -4,7 +4,7 @@ import main.Animal;
 
 public class Rabbit extends Animal {
 
-    public Rabbit(String picture, String name, String status, String description) {
-        super(picture, name, status, description);
+    public Rabbit(int id, String picture, String name, String status, String description) {
+        super(id, picture, name, status, description);
     }
 }

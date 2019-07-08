@@ -4,7 +4,7 @@ import main.Animal;
 
 public class Giraffe extends Animal {
 
-    public Giraffe(String picture, String name, String status, String description) {
-        super(picture, name, status, description);
+    public Giraffe(int id, String picture, String name, String status, String description) {
+        super(id, picture, name, status, description);
     }
 }

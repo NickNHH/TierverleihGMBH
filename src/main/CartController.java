@@ -11,14 +11,20 @@ public class CartController {
     public Button orderBtn;
     public VBox vBox;
 
-    private Gui gui = new Gui();
     private Logic logic = new Logic();
     private FXMLLoader fxmlLoader = new FXMLLoader();
 
     void init() {
         //loads class
-        for (int i = 0; i < CartItem.getCartItems().size(); i++) {
-            gui.createAnimalGUI(i, vBox, true);
+        int i = 0;
+        Gui gui = Gui.getInstance();
+
+        for (Animal animal : CartItem.getCartItems()) {
+            animal.setId(i);
+            gui.createAnimalGUI(animal, vBox, true);
+            gui.addSplitPane();
+
+            i++;
         }
     }
 
