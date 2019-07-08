@@ -29,10 +29,11 @@ public class OrderController {
         ((CartController) fxmlLoader.getController()).init();
     }
 
-    public void sendOrder() {
-        /*
-         * TODO: - This window should close after button click
-         *       - Save all data (Conent of shopping cart + personal data from this form) in an ArrayList or similar, so we can use this later again.
-         */
+    public void sendOrder() throws IOException {
+        Order order = new Order(firstNameTf.getText(), lastNameTf.getText(), emailTf.getText(), streetTf.getText(), zipCodeTf.getText(), reasonTf.getText());
+        order.addOrders(order);
+
+        logic.switchScene("fxml/ConfirmOrderFxml.fxml", orderBtn, fxmlLoader);
+        ((ConfirmOrderController) fxmlLoader.getController()).init(order);
     }
 }
