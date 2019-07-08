@@ -29,6 +29,6 @@
                <Font size="16.0" />
            </font>
        </Button>
-      <Pane fx:id="showList" layoutY="77.0" prefHeight="523.0" prefWidth="800.0" />
+      <VBox fx:id="showList" layoutY="77.0" prefHeight="523.0" prefWidth="800.0" />
    </children>
 </Pane>
